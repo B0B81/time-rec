@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @workfile.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @workfile.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @workfile.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @workfile.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_workfile_path(@workfile) %> |
+<%= link_to 'Back', workfiles_path %>

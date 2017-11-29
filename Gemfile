@@ -35,6 +35,19 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master' # For 5.x
+gem 'haml', '~> 4.0', '>= 4.0.7'
+
+# Use devise for authentication
+gem 'devise', '~> 4.3'
+gem 'devise-i18n'
+# Use Pundit for Athorization
+gem 'pundit'
+
+gem 'simple_form', '~> 3.4'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

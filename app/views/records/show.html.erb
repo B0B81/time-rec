@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @record.description %>
+</p>
+
+<p>
+  <strong>Ordernumber:</strong>
+  <%= @record.ordernumber %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @record.date %>
+</p>
+
+<p>
+  <strong>Begin time:</strong>
+  <%= @record.begin_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @record.end_time %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @record.user_id %>
+</p>
+
+<p>
+  <strong>Workfile:</strong>
+  <%= @record.workfile %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>
