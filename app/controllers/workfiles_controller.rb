@@ -1,5 +1,6 @@
 class WorkfilesController < ApplicationController
   before_action :set_workfile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /workfiles
   # GET /workfiles.json

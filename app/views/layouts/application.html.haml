@@ -1,0 +1,28 @@
+!!! 5
+%html
+  %head
+    %title Time-Rec
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    %nav.navbar.navbar-default
+      .container
+        .navbar-brand= link_to "Time-Rec", root_path
+
+        - if user_signed_in?
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "Neuer Stundennachweis", new_workfile_path
+            - if current_user.try(:admin?)
+              %li= link_to "Administration", users_path
+            %li= link_to t("Sign Out"), destroy_user_session_path, method: :delete
+        - else
+          %ul.nav.navbar-nav.navbar-right
+            -# = %li= link_to t("Sign Up"), new_user_registration_path
+            %li= link_to t("Sign In"), new_user_session_path
+    .container
+      -flash.each do |name, msg|
+        = content_tag :div, msg, class: "alert"
+
+    = yield
