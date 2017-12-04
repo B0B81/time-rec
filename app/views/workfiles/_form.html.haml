@@ -1,0 +1,21 @@
+.workfile
+  = simple_form_for(@workfile) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :title
+      = f.input :date
+      = f.input :description
+    %table.table
+      %thead
+        %tr
+          %th Ordernumber
+          %th Description
+          %th Date
+          %th Start
+          %th End
+      %tbody.fields
+        = f.simple_fields_for :records do |builder|
+          = render 'record', f: builder
+    .form-actions
+      = f.button :submit
+      = link_to_add_row('Add Record', f, :records, class: 'btn btn-primary')

@@ -16,12 +16,12 @@ class WorkfilesController < ApplicationController
   # GET /workfiles/new
   def new
     @workfile = Workfile.new
-    @workfile.records.build
+    #@workfile.records.build
   end
 
   # GET /workfiles/1/edit
   def edit
-    @workfile.records.build
+    #@workfile.records.build
   end
 
   # POST /workfiles
@@ -74,6 +74,6 @@ class WorkfilesController < ApplicationController
     def workfile_params
       # params.require(:workfile).permit(:title, :description, :date, :user_id)
       # params.require(:todo_list).permit(:name, tasks_attributes: [:id, :_destroy, :todo_list_id, :name, :completed, :due])
-      params.require(:workfile).permit(:title, :description, :date, :user_id, tasks_attributes: Task.attribute_names.map(&:to_sym).push(:_destroy))
+      params.require(:workfile).permit(:title, :description, :date, :user_id, records_attributes: Record.attribute_names.map(&:to_sym).push(:_destroy))
     end
 end

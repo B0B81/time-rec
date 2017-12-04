@@ -1,0 +1,24 @@
+%h1 Workfiles
+.panel.panel-default
+  .panel-body
+    .workfile
+      %table
+        %thead
+          %tr
+            %th Title
+            %th Description
+            %th Date
+            %th User
+            %th{:colspan => "3"}
+        %tbody
+          - @workfiles.each do |workfile|
+            %tr
+              %td= workfile.title
+              %td= workfile.description
+              %td= workfile.date
+              %td= workfile.user_id
+              %td= link_to 'Show', workfile
+              %td= link_to 'Edit', edit_workfile_path(workfile)
+              %td= link_to 'Destroy', workfile, method: :delete, data: { confirm: 'Are you sure?' }
+      %br/
+      = link_to 'New Workfile', new_workfile_path

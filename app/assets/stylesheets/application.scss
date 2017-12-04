@@ -15,18 +15,12 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- 
+
 
 @mixin box-shadow {
 	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 	-moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
-}
-
-@media (min-width: 1200px) {
-    .container{
-        max-width: 1200px;
-    }
 }
 
 $red: #DB6161;
@@ -64,6 +58,44 @@ body {
 	}
 }
 
+.workfile {
+	background: white;
+  padding: 15px;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+	h2 {
+		padding: 15px 5%;
+		margin: 0;
+		font-size: 20px;
+		font-weight: normal;
+		line-height: 1.5;
+		a {
+			color: $red;
+		}
+	}
+}
+
+#workfile_top {
+	margin-bottom: 50px;
+}
+
+
+.form-inline {
+	margin-top: 15px;
+}
+.form-input {
+	width: 65% !important;
+	float: left;
+}
+.form-button {
+	float: left;
+	width: 30% !important;
+	margin-left: 5%;
+}
+.add-button {
+	margin-top: 25px;
+}
 
 /*CSS Workaround for Fileupload-Button
 */
